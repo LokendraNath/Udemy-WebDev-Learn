@@ -47,3 +47,12 @@ RIGHT JOIN orders o ON c.customer_id = o.customer_id;
 SELECT c.customer_name , o.product_name, o.quantity
 FROM customers c
 FULL OUTER JOIN orders o ON c.customer_id = o.customer_id;
+
+-- Inner Query (“Un customers ke naam dikhao jinhone ‘Glasses’ product order kiya hai.”)
+SELECT customer_name
+FROM customers
+WHERE customer_id IN (
+  SELECT customer_id
+  FROM orders
+  WHERE product_name = "Glasses"
+)
