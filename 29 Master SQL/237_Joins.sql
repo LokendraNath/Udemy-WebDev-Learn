@@ -28,3 +28,7 @@ INSERT INTO orders( order_id, customer_id, product_name, quantity) VALUES
 SELECT * FROM customers;
 SELECT * FROM orders;
 
+-- Inner Join
+SELECT c.customer_name , o.product_name, o.quantity
+FROM customers c
+INNER JOIN orders o ON c.customer_id = o.customer_id
